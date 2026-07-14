@@ -2,13 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.html",
+      "src": "modern-portfolio.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/(.*)\\.(pdf|jpeg|jpg|png|ico|svg|css|js|json|webp)$",
+      "dest": "/$1.$2"
+    },
+    {
+      "src": "/",
       "dest": "/modern-portfolio.html"
     }
   ]
